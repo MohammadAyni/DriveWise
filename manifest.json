@@ -1,0 +1,15 @@
+{
+    "name": "DriveWise",
+    "short_name": "DriveWise",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "description": "Drive smarter. Earn better.",
+    "icons": [
+        {
+            "src": "./icons/icon.png",
+            "sizes": "10224x1024",
+            "type": "image/png"
+        }
+    ]
+}

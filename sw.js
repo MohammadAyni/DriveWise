@@ -1,4 +1,4 @@
-const CACHE_NAME = "drivewise-v1";
+const CACHE_NAME = "drivewise-v2";
 
 const FILES_TO_CACHE = [
     "./",

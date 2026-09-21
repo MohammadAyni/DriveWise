@@ -35,3 +35,52 @@ p {
     color: #dbeafe;
     font-size: 18px;
 }
+
+/* MOBILE DESIGN */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    h1 {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .card {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 20px auto;
+        padding: 20px 15px;
+    }
+
+    .card input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px;
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .card button {
+        width: 100%;
+        padding: 14px;
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    #totalStats {
+        margin-top: 25px;
+    }
+
+    #totalStats p {
+        font-size: 17px;
+        margin: 12px 0;
+    }
+}

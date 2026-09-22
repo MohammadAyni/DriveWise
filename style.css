@@ -1,0 +1,664 @@
+/* =========================
+   DRIVEWISE V1
+   MOBILE FIRST DESIGN
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 20px 14px 40px;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a,
+            #0f766e
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.app-header {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-header h1 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+.app-header p {
+    margin: 5px 0 0;
+
+    font-size: 14px;
+
+    color: #cbd5e1;
+}
+
+#profileButton {
+    width: 46px;
+    height: 46px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-card {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto 18px;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37, 99, 235, 0.45),
+            rgba(15, 118, 110, 0.45)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    text-align: center;
+}
+
+.welcome-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 24px;
+}
+
+.welcome-card p {
+    margin: 0;
+
+    color: #dbeafe;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 18px auto;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(10px);
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-size: 21px;
+}
+
+.card p {
+    color: #dbeafe;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+label {
+    display: block;
+
+    margin: 12px 0 6px;
+
+    font-size: 14px;
+
+    color: #dbeafe;
+}
+
+input {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 8px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #111827;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(56, 189, 248, 0.20);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    min-height: 46px;
+
+    padding: 11px 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+form button {
+    width: 100%;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   DRIVER EXPERIENCE
+========================= */
+
+.experience-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+#newDriverButton {
+    background: #0f766e;
+}
+
+#experiencedDriverButton {
+    background: #1d4ed8;
+}
+
+#driverGuide {
+    margin-top: 15px;
+}
+
+.guide-box {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    line-height: 1.6;
+}
+
+.guide-box ul {
+    padding-left: 20px;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+#result {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(15, 23, 42, 0.45);
+
+    color: white;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FUEL RESULT
+========================= */
+
+#fuelResult {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(15, 23, 42, 0.45);
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.stat-box {
+    padding: 15px 10px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    text-align: center;
+}
+
+.stat-box span {
+    display: block;
+
+    font-size: 24px;
+
+    margin-bottom: 7px;
+}
+
+.stat-box strong {
+    display: block;
+
+    font-size: 19px;
+
+    color: white;
+
+    overflow-wrap: anywhere;
+}
+
+.stat-box small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #cbd5e1;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   DRIVE HISTORY
+========================= */
+
+#driverList {
+    margin-top: 15px;
+}
+
+.drive-item {
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    background: rgba(15, 23, 42, 0.50);
+
+    line-height: 1.6;
+}
+
+.drive-item .drive-info {
+    margin-bottom: 10px;
+
+    overflow-wrap: anywhere;
+}
+
+.drive-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.drive-actions button {
+    flex: 1;
+
+    min-width: 100px;
+}
+
+.edit-button {
+    background: #0f766e;
+}
+
+.delete-button {
+    background: #dc2626;
+}
+
+
+/* =========================
+   TOOLS
+========================= */
+
+.tools-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.tools-grid button {
+    width: 100%;
+
+    min-height: 58px;
+
+    background: rgba(37, 99, 235, 0.45);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 30px auto 0;
+
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TABLET / DESKTOP
+========================= */
+
+@media (min-width: 700px) {
+
+    body {
+        padding: 30px 20px 50px;
+    }
+
+    .app-header h1 {
+        font-size: 34px;
+    }
+
+    .experience-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+}  
+
+/* =========================
+   DRIVEWISE CHARTS
+========================= */
+
+.chart-card {
+    margin-top: 20px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+}
+
+.chart-card h3 {
+    margin-bottom: 20px;
+}
+
+
+/* Chart area */
+
+.bar-chart {
+    height: 220px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 18px;
+
+    padding: 35px 15px 35px;
+
+    overflow-x: auto;
+
+    border-radius: 12px;
+
+    background: rgba(0, 0, 0, 0.12);
+}
+
+
+/* Individual bar */
+
+.chart-bar {
+    position: relative;
+
+    flex: 0 0 55px;
+
+    min-height: 10px;
+
+    border-radius: 10px 10px 4px 4px;
+
+    background: linear-gradient(
+        to top,
+        #0ea5e9,
+        #22c55e
+    );
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Value above bar */
+
+.chart-value {
+    position: absolute;
+
+    top: -28px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    color: white;
+}
+
+
+/* Drive number below bar */
+
+.chart-label {
+    position: absolute;
+
+    bottom: -28px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    color: white;
+}
+
+/* =========================
+   MOBILE APP POLISH
+   ========================= */
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Better phone spacing */
+@media (max-width: 699px) {
+
+    body {
+        padding: 14px 12px 35px;
+    }
+
+    .app-header {
+        margin: 0 auto 16px;
+        padding: 14px 4px;
+    }
+
+    .app-header h1 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    /* Bigger buttons for fingers */
+    button {
+        min-height: 48px;
+        padding: 12px 16px;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+
+    /* Prevent horizontal overflow */
+    .tools-grid,
+    .stats-grid,
+    .experience-buttons {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* History items */
+    #driverList > * {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    /* Charts */
+    .chart-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* Footer */
+    footer {
+        padding-bottom: 20px;
+    }
+}
+
+/* iPhone safe area */
+@supports (padding: env(safe-area-inset-bottom)) {
+    body {
+        padding-bottom: calc(35px + env(safe-area-inset-bottom));
+    }
+}

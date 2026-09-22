@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0f172a"
+    >
+
+    <title>DriveWise</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="app-header">
+
+        <div>
+
+            <h1>🚗 DriveWise</h1>
+
+            <p>
+                Drive smarter. Earn better.
+            </p>
+
+        </div>
+
+        <button id="profileButton">
+            👤
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================
+         WELCOME
+    ========================== -->
+
+    <section class="welcome-card">
+
+        <h2>
+            Welcome Driver 👋
+        </h2>
+
+        <p>
+            Track your driving,
+            earnings, fuel, and profit.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         DRIVER EXPERIENCE
+    ========================== -->
+
+    <section class="card">
+
+        <h2>
+            🚗 Driver Experience
+        </h2>
+
+        <p>
+            Are you new to delivery driving?
+        </p>
+
+        <div class="experience-buttons">
+
+            <button id="newDriverButton">
+                🆕 Yes, I'm new
+            </button>
+
+            <button id="experiencedDriverButton">
+                💪 I have experience
+            </button>
+
+        </div>
+
+        <div id="driverGuide"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TODAY'S DRIVE
+    ========================== -->
+
+    <section class="card">
+
+        <h2>
+            📊 Today's Drive
+        </h2>
+
+        <form id="driveForm">
+
+            <label for="miles">
+                Miles
+            </label>
+
+            <input
+                type="number"
+                id="miles"
+                placeholder="Miles driven"
+                min="0"
+                step="0.1"
+            >
+
+            <label for="earnings">
+                Earnings
+            </label>
+
+            <input
+                type="number"
+                id="earnings"
+                placeholder="Earnings ($)"
+                min="0"
+                step="0.01"
+            >
+
+            <button
+                type="submit"
+                id="saveDrive"
+            >
+                💾 Save Drive
+            </button>
+
+        </form>
+
+        <p id="result"></p>
+
+    </section>
+
+
+
+    <!-- =========================
+         FUEL TRACKER
+    ========================== -->
+
+    <section class="card">
+
+        <h2>
+            ⛽ Fuel Tracker
+        </h2>
+
+        <p>
+            Record your fuel fill-up
+            separately from your drive.
+        </p>
+
+        <form id="fuelForm">
+
+            <label for="fuelCost">
+                Fuel Cost
+            </label>
+
+            <input
+                type="number"
+                id="fuelCost"
+                placeholder="Fuel cost ($)"
+                min="0"
+                step="0.01"
+            >
+
+            <label for="gallons">
+                Gallons
+            </label>
+
+            <input
+                type="number"
+                id="gallons"
+                placeholder="Gallons"
+                min="0"
+                step="0.01"
+            >
+
+            <label for="odometer">
+                Odometer
+            </label>
+
+            <input
+                type="number"
+                id="odometer"
+                placeholder="Odometer"
+                min="0"
+                step="0.1"
+            >
+
+            <button type="submit">
+                ⛽ Save Fuel
+            </button>
+
+        </form>
+
+        <div id="fuelResult"></div>
+
+
+        <!-- FUEL HISTORY -->
+
+        <h3>
+            ⛽ Fuel History
+        </h3>
+
+        <div id="fuelHistory"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         TOTAL STATISTICS
+    ========================== -->
+
+    <section class="card">
+
+        <h2>
+            📈 Total Statistics
+        </h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+
+                <span>
+                    🛣️
+                </span>
+
+                <strong id="totalMiles">
+                    0
+                </strong>
+
+                <small>
+                    Total Miles
+                </small>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    💵
+                </span>
+
+                <strong id="totalEarnings">
+                    $0
+                </strong>
+
+                <small>
+                    Total Earnings
+                </small>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    ⛽
+                </span>
+
+                <strong id="totalFuel">
+                    $0
+                </strong>
+
+                <small>
+                    Total Fuel
+                </small>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    💰
+                </span>
+
+                <strong id="totalNet">
+                    $0
+                </strong>
+
+                <small>
+                    Estimated Net
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DRIVE HISTORY
+    ========================== -->
+
+    <section class="card">
+
+        <h2>
+            📝 Drive History
+        </h2>
+
+        <input
+            type="text"
+            id="driveSearch"
+            placeholder="🔎 Search drives..."
+        >
+
+        <div id="driverList"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DRIVEWISE TOOLS
+    ========================== -->
+
+    <section class="card">
+
+        <h2>
+            🚀 DriveWise Tools
+        </h2>
+
+        <div class="tools-grid">
+
+            <button id="aiOfferButton">
+              🤖 AI Offer Analyzer
+            </button>    
+
+            <button id="RouteButton">
+                🗺️ Route & Stops
+            </button>
+
+            <button>
+                📡 Offline Mode
+            </button>
+
+            <button>
+                🌐 Language Assistant
+            </button>
+
+            <button id="reportsButton">
+                📊 Reports
+            </button>
+
+            <button>
+                ⭐ Premium
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     AI OFFER ANALYZER
+========================= -->
+
+<section class="card" id="aiOfferSection">
+
+    <h2>
+        🤖 AI Offer Analyzer
+    </h2>
+
+    <p>
+        Check a delivery offer before accepting it.
+    </p>
+
+    <form id="offerForm">
+
+        <label for="offerAmount">
+            Offer Amount ($)
+        </label>
+
+        <input
+            type="number"
+            id="offerAmount"
+            placeholder="Example: 15"
+            min="0"
+            step="0.01"
+            required
+        >
+
+        <label for="offerMiles">
+            Total Miles
+        </label>
+
+        <input
+            type="number"
+            id="offerMiles"
+            placeholder="Example: 8"
+            min="0.1"
+            step="0.1"
+            required
+        >
+
+        <label for="offerMinutes">
+            Estimated Time (minutes)
+        </label>
+
+        <input
+            type="number"
+            id="offerMinutes"
+            placeholder="Example: 30"
+            min="1"
+            step="1"
+            required
+        >
+
+        <label for="offerFuel">
+            Estimated Fuel Cost ($)
+        </label>
+
+        <input
+            type="number"
+            id="offerFuel"
+            placeholder="Example: 2"
+            min="0"
+            step="0.01"
+            value="0"
+        >
+
+        <button type="submit">
+            🔎 Analyze Offer
+        </button>
+
+    </form>
+
+    <div
+        id="offerResult"
+        class="offer-result"
+    ></div>
+
+</section>
+
+<!-- =========================
+     ROUTE & STOPS
+========================= -->
+
+<section class="card" id="routeSection">
+
+    <h2>
+        🗺️ Route & Stops
+    </h2>
+
+    <p>
+        Plan your delivery route and track your stops.
+    </p>
+
+    <form id="routeForm">
+
+        <label for="stopName">
+            📍 Stop Name
+        </label>
+
+        <input
+            type="text"
+            id="stopName"
+            placeholder="Example: Walmart"
+            required
+        >
+
+        <label for="stopMiles">
+            🛣️ Miles to Stop
+        </label>
+
+        <input
+            type="number"
+            id="stopMiles"
+            placeholder="Example: 5"
+            min="0"
+            step="0.1"
+            required
+        >
+
+        <label for="stopMinutes">
+            ⏱️ Estimated Time (minutes)
+        </label>
+
+        <input
+            type="number"
+            id="stopMinutes"
+            placeholder="Example: 15"
+            min="1"
+            step="1"
+            required
+        >
+
+        <button type="submit">
+            ➕ Add Stop
+        </button>
+
+    </form>
+
+
+    <div id="routeResult"></div>
+
+
+    <h3>
+        📍 Your Stops
+    </h3>
+
+    <div id="stopsList"></div>
+
+
+    <div class="route-summary">
+
+        <p>
+            🛣️ Total Route:
+            <strong id="routeTotalMiles">
+                0.0 mi
+            </strong>
+        </p>
+
+        <p>
+            ⏱️ Estimated Time:
+            <strong id="routeTotalMinutes">
+                0 min
+            </strong>
+        </p>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================
+         REPORTS
+    ========================== -->
+
+    <section
+        class="card"
+        id="reportsSection"
+    >
+
+        <h2>
+            📊 Reports
+        </h2>
+
+        <div class="stats-grid">
+
+            <div class="stat-box">
+
+                <span>
+                    🛣️
+                </span>
+
+                <strong id="reportMiles">
+                    0
+                </strong>
+
+                <small>
+                    Total Miles
+                </small>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    💵
+                </span>
+
+                <strong id="reportEarnings">
+                    $0.00
+                </strong>
+
+                <small>
+                    Total Earnings
+                </small>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    ⛽
+                </span>
+
+                <strong id="reportFuel">
+                    $0.00
+                </strong>
+
+                <small>
+                    Total Fuel
+                </small>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <span>
+                    💰
+                </span>
+
+                <strong id="reportNet">
+                    $0.00
+                </strong>
+
+                <small>
+                    Net Income
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+     PERIOD REPORTS
+========================== -->
+
+<section class="card" id="periodReports">
+
+    <h2>
+        📅 Reports by Period
+    </h2>
+
+    <div class="report-period-buttons">
+
+        <button class="period-btn active" data-period="today">
+            Today
+        </button>
+
+        <button class="period-btn" data-period="week">
+            This Week
+        </button>
+
+        <button class="period-btn" data-period="month">
+            This Month
+        </button>
+
+        <button class="period-btn" data-period="all">
+            All Time
+        </button>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-box">
+
+            <span>🛣️</span>
+
+            <strong id="periodMiles">
+                0.0
+            </strong>
+
+            <small>
+                Miles
+            </small>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <span>💵</span>
+
+            <strong id="periodEarnings">
+                $0.00
+            </strong>
+
+            <small>
+                Earnings
+            </small>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <span>⛽</span>
+
+            <strong id="periodFuel">
+                $0.00
+            </strong>
+
+            <small>
+                Fuel
+            </small>
+
+        </div>
+
+
+        <div class="stat-box">
+
+            <span>💰</span>
+
+            <strong id="periodNet">
+                $0.00
+            </strong>
+
+            <small>
+                Net Income
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+
+
+<!-- =========================
+     CHARTS
+========================= -->
+
+<section class="card" id="chartsSection">
+
+    <h2>
+        📊 Driving Charts
+    </h2>
+
+    <p>
+        Your recent driving performance
+    </p>
+
+    <div class="chart-card">
+
+        <h3>
+            💵 Earnings
+        </h3>
+
+        <div id="earningsChart" class="bar-chart"></div>
+
+    </div>
+
+    <div class="chart-card">
+
+        <h3>
+            🛣️ Miles
+        </h3>
+
+        <div id="milesChart" class="bar-chart"></div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            DriveWise V1
+        </p>
+
+        <p>
+            Drive smarter. Earn better. 🚗
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="app.js"></script>
+
+
+    <!-- =========================
+         SERVICE WORKER
+    ========================== -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker.register("sw.js");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
